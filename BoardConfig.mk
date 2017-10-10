@@ -66,12 +66,16 @@ BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a57
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/flounder/bluetooth
+BOARD_CUSTOM_BT_CONFIG := device/htc/flounder/bluetooth/vnd_flounder.txt
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.flounder libhealthd.flounder
+
+# Use flounder's libhealthd
+WITH_LINEAGE_CHARGER := false
 
 BOARD_VENDOR_USE_SENSOR_HAL := sensor_hub
 
@@ -91,7 +95,6 @@ WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 
 BOARD_SEPOLICY_DIRS += device/htc/flounder/sepolicy
-BOARD_SECCOMP_POLICY += device/htc/flounder/seccomp
 
 TARGET_USES_64_BIT_BCMDHD := true
 TARGET_USES_64_BIT_BINDER := true
