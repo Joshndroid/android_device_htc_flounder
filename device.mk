@@ -14,6 +14,7 @@
 # limitations under the License.
 #
 
+# Wifi
 PRODUCT_PACKAGES := \
     android.hardware.wifi@1.0-service \
     libwpa_client \
@@ -59,12 +60,6 @@ PRODUCT_COPY_FILES += \
 # headset keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl
-
-PRODUCT_PACKAGES += \
-    libwpa_client \
-    hostapd \
-    wpa_supplicant \
-    wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
@@ -178,6 +173,13 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag
 
+# Audio HAL
+PRODUCT_PACKAGES += \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.broadcastradio@1.0-impl \
+    android.hardware.soundtrigger@2.0-impl
+
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
     libbt-vendor \
@@ -186,10 +188,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librs_jni \
     com.android.future.usb.accessory
-
-PRODUCT_PACKAGES += \
-    power.flounder \
-    hwcomposer.flounder
 
 # Camera HAL
 PRODUCT_PACKAGES += \
@@ -200,14 +198,47 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl
 
+# Gatekeeper HAL
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0-impl
+
 # GNSS HAL
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl
+
+# Graphics HAL
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    hwcomposer.flounder
+
+# Health HAL
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl
+
+# Keymaster HAL
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl
 
 # Light HAL
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     lights.flounder
+
+# Memtrack HAL
+PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-impl
+
+# Power HAL
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-impl \
+    power.flounder
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # Sensors HAL
 PRODUCT_PACKAGES += \
