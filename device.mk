@@ -97,6 +97,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/mixer_paths_0.xml:system/etc/mixer_paths_0.xml
 
@@ -378,11 +379,11 @@ endif
 
 $(call inherit-product-if-exists, hardware/nvidia/tegra132/tegra132.mk)
 $(call inherit-product-if-exists, vendor/nvidia/proprietary-tegra132/tegra132-vendor.mk)
-$(call inherit-product-if-exists, vendor/htc/flounder-common/flounder-common-vendor.mk)
+$(call inherit-product, vendor/htc/flounder-common/flounder-common-vendor.mk)
 ifeq ($(TARGET_PRODUCT),lineage_flounder_lte)
-    $(call inherit-product-if-exists, vendor/htc/flounder_lte/flounder_lte-vendor.mk)
+    $(call inherit-product, vendor/htc/flounder_lte/flounder_lte-vendor.mk)
 else
-    $(call inherit-product-if-exists, vendor/htc/flounder/flounder-vendor.mk)
+    $(call inherit-product, vendor/htc/flounder/flounder-vendor.mk)
 endif
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4354/device-bcm.mk)
 $(call inherit-product-if-exists, vendor/htc/flounder/audio/lifevibes/lvve/device-vendor-lvve.mk)
