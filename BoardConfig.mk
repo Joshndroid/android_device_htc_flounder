@@ -14,7 +14,8 @@
 # limitations under the License.
 #
 
-# Build a separate vendor.img
+# Build a separate vendor image holding only device specific properties
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 TARGET_COPY_OUT_VENDOR := vendor
 
 TARGET_ARCH := arm64
@@ -76,9 +77,6 @@ BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
 
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.flounder
-
-# Use flounder's libhealthd
-WITH_LINEAGE_CHARGER := false
 
 BOARD_VENDOR_USE_SENSOR_HAL := sensor_hub
 
