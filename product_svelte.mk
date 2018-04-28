@@ -26,9 +26,9 @@ PRODUCT_COPY_FILES += \
 #TODO: figure out if we need an overlay
 #DEVICE_PACKAGE_OVERLAYS := vendor/lge/hammerhead/svelte-overlay
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
 	ro.config.low_ram=true \
 	ro.logd.size=64K \
 	ro.sf.lcd_density=144
 
-PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.jit.codecachesize=0
+PRODUCT_GENERIC_PROPERTIES += dalvik.vm.jit.codecachesize=0

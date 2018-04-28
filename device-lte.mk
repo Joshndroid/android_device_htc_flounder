@@ -22,10 +22,10 @@ PRODUCT_PACKAGES += \
     rild \
     CarrierConfig
 
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
     ro.telephony.default_cdma_sub=0
 
 # LTE, CDMA, GSM/WCDMA
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
     ro.telephony.default_network=9 \
     telephony.lteOnCdmaDevice=1

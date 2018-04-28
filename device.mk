@@ -245,7 +245,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fsck.f2fs mkfs.f2fs
 
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_GENERIC_PROPERTIES := \
     wifi.interface=wlan0 \
     ro.opengles.version=196609 \
     ro.sf.lcd_density=320 \
@@ -270,7 +270,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 # N9 has only two CPUs, so drop dex2oat pressure after boot at runtime
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
     dalvik.vm.dex2oat-threads=1
 
 # for off charging mode
@@ -285,7 +285,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     audio.r_submix.default \
     libhtcacoustic
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
     ro.audio.monitorRotation=true
 
 # for sound trigger on DSP
@@ -301,11 +301,11 @@ PRODUCT_PACKAGES += \
 #    VolantisLayout
 
 # drmservice prop
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
     drm.service.enabled=true
 
 # facelock properties
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
     ro.facelock.black_timeout=700 \
     ro.facelock.det_timeout=2500 \
     ro.facelock.rec_timeout=3500 \
@@ -317,7 +317,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Reduce client buffer size for fast audio output tracks
 # and configure audio low latency for 128 frames per buffer
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_GENERIC_PROPERTIES += \
     af.fast_track_multiplier=1 \
     audio_hal.period_size=128
 

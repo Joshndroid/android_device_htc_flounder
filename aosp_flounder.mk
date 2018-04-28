@@ -21,7 +21,7 @@
 # lines, aosp and flounder, hence its name.
 #
 
-PRODUCT_PROPERTY_OVERRIDES := \
+PRODUCT_GENERIC_PROPERTIES := \
         net.dns1=8.8.8.8 \
         net.dns2=8.8.4.4
 
